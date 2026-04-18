@@ -140,7 +140,12 @@ Requirements:
     console.error("Claude returned non-JSON response");
     return NextResponse.json(fallback(topic, settings));
   } catch (err) {
-    console.error("Generate API error:", err);
-    return NextResponse.json(fallback(topic, settings));
+    const message = err instanceof Error ? err.message : String(err);
+    console.error("Generate API error:", message);
+    // Surface the real error in the response body so we can debug on Vercel
+    return NextResponse.json(
+      { ...fallback(topic, settings), _debug_error: message },
+      { status: 200 }
+    );
   }
 }
