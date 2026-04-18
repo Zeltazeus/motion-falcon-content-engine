@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: #0a0a0a;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-syne), system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* Selection */
+::selection {
+  background: rgba(184, 245, 90, 0.25);
+  color: #ffffff;
+}
+
+/* Safe area helpers for mobile */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Progress bar gradient */
+.progress-fill {
+  background: linear-gradient(90deg, #b8f55a 0%, #5af5d4 100%);
+}
+
+/* Prose-like wrap for generated blog content */
+.blog-body {
+  white-space: pre-wrap;
+  line-height: 1.7;
+  font-family: var(--font-syne), sans-serif;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.linkedin-body {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  font-family: var(--font-syne), sans-serif;
+  color: rgba(255, 255, 255, 0.9);
+}
